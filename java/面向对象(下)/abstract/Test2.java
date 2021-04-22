@@ -35,6 +35,8 @@ public class Test2 {
         public abstract void talk();
     }
 
+
+
     class Man extends Person {
 
 
