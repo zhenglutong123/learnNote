@@ -1,0 +1,15 @@
+一、集合的概述
+    对多个数据进行存储操作的结构
+二、数组，集合对比
+    数组 特点:一旦初始化，就确定了长度，类型,有序可重复
+        缺点:增删修改操作不便
+
+三、集合框架
+    Collection  单列
+        |----List 有序的，可重复的
+            |--ArrayList、Vector、LinkedList
+
+        |----Set  无序的，不可重复的
+            |--HashSet、LinkedHashSet、TreeSet
+    Map          双列
+        |----HashMap、LinkedHasgmap、TreeMap、HashTable、Properties
