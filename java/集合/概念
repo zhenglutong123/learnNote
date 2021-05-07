@@ -13,3 +13,7 @@
             |--HashSet、LinkedHashSet、TreeSet
     Map          双列
         |----HashMap、LinkedHasgmap、TreeMap、HashTable、Properties
+
+
+    iterator迭代器
+    for(Object o:coll){}底层调用iterator迭代器遍历
