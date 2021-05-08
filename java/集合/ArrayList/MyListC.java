@@ -40,6 +40,7 @@ public class MyListC{
         m.add(123);
         m.add(456);
         System.out.println(m);
+
     }
 
 }
