@@ -15,8 +15,14 @@ public enum EnumTest implements A{
 
         }
     };
+    private int i=0;
+    EnumTest(){
+
+    }
+    public static final EnumTest winner=new EnumTest();
     public static void main(String[] args) {
         EnumTest summer = EnumTest.SUMMER;
+        EnumTest.winner;
         System.out.println(summer);
         System.out.println(EnumTest.class.getSuperclass());
     }

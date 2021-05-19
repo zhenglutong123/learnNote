@@ -2,10 +2,14 @@
 
 2.IO流原理及流的分类
 
+  1.操作数据单位:字节流，字符流
+  2.数据的流向:输入流，输出流
+  3.流的角色:节点流，处理流
 3.节点流(或文件流)
-
-4.缓冲流
-
-5.转换流
+  InputStream,OutputStream,Reader,Writer
+  FileInputStream,FileOutputStream,FileReader,FileWriter
+4.缓冲流(处理流)
+  BufferInputStream,BufferOutputStream
+5.转换流(处理流)
 
 6.标准输入、输出流
