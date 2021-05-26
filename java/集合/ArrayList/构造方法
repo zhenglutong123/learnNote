@@ -1,0 +1,39 @@
+//用于空实例的共享空数组实例
+private static final Object[] EMPTY_ELEMENTDATA = {};
+//默认空容量数组 calculateCapacity方法判断元素数组引用的是此数组，对数组进行容量为10的初始化
+private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+//集合真正存储数据的容器
+transient Object[] elementData;
+
+//空参构造器
+public ArrayList() {
+    //把空的Object数组实例赋值给元素数组
+    this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+}
+
+//指定初始容量
+public ArrayList(int initialCapacity) {
+    if (initialCapacity > 0) {
+        //创建指定容量的数组
+        this.elementData = new Object[initialCapacity];
+    } else if (initialCapacity == 0) {
+        //空数组
+        this.elementData = EMPTY_ELEMENTDATA;
+    } else {
+        throw new IllegalArgumentException("Illegal Capacity: "+
+                                           initialCapacity);
+    }
+}
+
+public ArrayList(Collection<? extends E> c) {
+    //c转换成数组赋值给元素数组
+    elementData = c.toArray();
+    if ((size = elementData.length) != 0) {
+        // 元素数组不是Object类型的，复制当前数组，返回Object类型数组
+        if (elementData.getClass() != Object[].class)
+            elementData = Arrays.copyOf(elementData, size, Object[].class);
+    } else {
+        // replace with empty array.
+        this.elementData = EMPTY_ELEMENTDATA;
+    }
+}
