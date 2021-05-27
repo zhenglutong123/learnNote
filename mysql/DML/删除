@@ -1,0 +1,7 @@
+delete from 表名 where 筛选条件
+
+自增ID会从断点开始
+
+truncate table 表名
+
+ID重新开始算

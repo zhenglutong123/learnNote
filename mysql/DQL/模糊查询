@@ -1,0 +1,42 @@
+select 查询列表 from 表名
+查询列表 :字段名,常量,函数,表达式
+
+关键字
+DESC显示表结构
+DISTINCT去重
+CONCAT 连接字符
+IFNULL 如果字段为空，返回你设定的值
+
+//模糊查询
+like
+#案例1
+Select * from table where a like '%a%';
+#案例2 查询第2个字符为a的,第5个字符为B的
+Select * from table where a like '_a__b%';
+#案例3 查询第2个字符为_的
+Select * from table where a like '_\_%';
+Select * from table where a like '%_$_%' escape '$';
+
+
+between and
+#案例1
+Select * from table where a>=100 and a<=120;
+等价于
+Select * from table where a between 100 and 120;
+
+
+
+in
+#案例1
+Select * from table where a="a" or a="b" or a="c";
+等价于
+Select * from table where a in("a","b","c");
+
+is null |is not null
+#案例1
+Select * from table where a IS NULL
+#案例2
+Select * from table where a IS NOT NULL
+
+length
+Select LENGTH(name) as namelength from table where a IS NOT NULL

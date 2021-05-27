@@ -1,0 +1,22 @@
+#用作统计使用，又称聚合函数或统计函数
+sum 求和
+avg 平均值
+max 最大值
+min 最小值
+count 计算个数
+
+全都忽略null
+
+count效率
+myisam引擎下:count(*)的效率高
+Innodb引擎下:count(*)和count(1)的效率差不多，比count(字段)效率高
+
+
+#分组查询
+分为
+ 分组前筛选  where
+ 分组后筛选  having
+group by
+select count(*),a from table group by a
+having
+select count(*),a from table group by a having count(*)>2

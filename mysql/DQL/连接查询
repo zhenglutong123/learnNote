@@ -1,0 +1,14 @@
+
+笛卡尔乘积
+
+按功能分类
+    内连接:inner join
+        等值连接，
+        非等值连接，
+        自连接
+    外连接:
+        左外连接，left join
+        右外连接，right join
+        全外连接 full outer join
+    交叉连接
+        cross join
