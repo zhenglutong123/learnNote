@@ -1,0 +1,41 @@
+一、库的管理
+1.库的创建
+create database 库名
+create database if not exists 库名
+修改库的字符集
+ALTER database 库名 character set utf-8
+库的删除
+DROP databases if exists 库名
+
+二、表的创建
+create table  Book(列名，类型);
+表的修改
+1.列名
+ALTER TABLE 表名  change column 列名 新名 类型
+2.列的类型或约束
+ALTER TABLE 表名  modify column 列名  类型
+3.添加新列
+ALTER TABLE 表名  add column 列名 类型
+4.删除
+ALTER TABLE 表名  DROP column 列名
+5.修改表名
+ALTER TABLE 表名 rename to 新名
+
+表的删除
+
+DROP TABLE 表名
+
+DROP TABLE IF EXISTS  表名
+
+表的复制
+复制表结构
+CREATE TABLE 新名 LIKE 复制表的名字
+复制表的结构+数据
+CREATE TABLE 新名
+select * from 表名
+复制部分数据
+CREATE TABLE 新名
+select 列名 from 表名  where 列名=
+复制某些字段
+CREATE TABLE 新名
+select 列名 from 表名  where 1=2
