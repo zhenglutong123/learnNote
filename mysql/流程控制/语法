@@ -1,0 +1,62 @@
+分支结构
+if(1>1,1,2);三木运算符
+#case结构
+case 值
+when 条件 then 返回
+
+else 返回
+end case;
+
+#if结构
+if 条件1 then return 值；
+elseif then  return 值
+else return 值
+end if;
+
+
+循环结构
+
+while
+
+while 循环条件 do
+循环体
+end while;
+
+loop
+【标签:】 loop
+    循环体
+end loop【标签】;
+
+repeat
+【标签:】 repeat
+    循环体
+until 结束循环的条件
+end loop【标签】;
+
+
+案例1
+create procedure(in insert int)
+begin
+    declare i int default i;
+    while i<=insert do
+        insert into 表名 values();
+        set i=i+1;
+    end while;
+end $
+
+案例2 带循环控制语句
+create procedure(in insert int)
+begin
+    declare i int default i;
+    a:while i<=insert do
+        insert into 表名 values();
+        if i>=20 leave a;
+        end if;
+        set i=i+1;
+    end while a;
+end $
+
+
+
+iterate 类似 continue
+leave 类型break

@@ -1,0 +1,28 @@
+一、创建
+create function 函数名(参数名 类型) returns 返回类型
+BEGIN
+
+END
+
+二、调用
+select 函数名(参数列表)
+
+案例1：无参有返回
+create function myf1() returns int
+BEGIN
+    declare c int default 0
+    select count(*) into c#赋值
+    from employees
+    return c;
+END $
+select myf1()$
+案例2：有参有返回
+create function myf2(empName varchar(20)) returns int
+BEGIN
+    declare c int default 0
+    select count(*) into c#赋值
+    from employees where empName=empName
+    return c;
+END $
+select myf1()$
+
