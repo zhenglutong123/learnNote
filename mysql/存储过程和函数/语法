@@ -1,0 +1,35 @@
+一、创建语法
+1.create procedure 存储过程名(参数列表)
+begin
+
+end
+参数列表包括三部分
+参数模式
+参数名
+参数类型
+
+参数模式
+in      输入参数
+out     输出参数
+inout   输入输出参数
+
+2.每条sql分号结尾，存储过程的结尾使用delimiter重新设置
+delimiter $
+
+二、调用语法
+call 存储过程名(参数)
+
+案例1: in
+delimiter $
+create procedure(in name varchar(20))
+BEGIN
+    //设置变量
+    declare 变量名 int default 0;
+    select count(*)  into 变量 (赋值变量)
+    from table where table.name=name;
+
+    select 变量名;
+END $
+
+三、删除
+DROP procedure 存储过程名称

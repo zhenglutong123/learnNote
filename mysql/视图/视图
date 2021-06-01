@@ -1,0 +1,3 @@
+create view 视图名
+AS
+SQL语句
