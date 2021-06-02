@@ -1,0 +1,25 @@
+作用:用来把类加载到内存的
+分类:
+引导类加载器:负责java核心库,用来装载核心类库,无法直接获取
+扩展类加载器:负责jre/lib/ext目录下的jar包装入工作库
+系统类加载器:负责java-classpath或-D java.class.path所指目录下的类与jar包装入工作库
+
+public class ClassLoaderTest {
+    @Test
+    public void test01(){
+        //系统类加载器
+        ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();
+        //扩展类加载器
+        ClassLoader classLoader1 = classLoader.getParent();
+        //引导类加载器
+        ClassLoader parent = classLoader1.getParent();
+    }
+
+    @Test
+    public void test02(){
+        //系统类加载器
+        ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();
+        InputStream in=classLoader.getResourceAsStream("jdbc.properties");
+        classLoader.load(in)
+    }
+}
