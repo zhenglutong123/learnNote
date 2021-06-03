@@ -1,2 +1,2 @@
-insert into 表名(字段名) values() 支持多条数据插入  支持子查询
+insert into 表名(字段名) values(),() 支持多条数据插入  支持子查询
 insert into 表名 set 字段名=值
