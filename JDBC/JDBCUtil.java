@@ -132,4 +132,33 @@ public class JDBCUtil<T> {
         }
         return null;
     }
+
+    //终极优化批量插入数据
+    public static void listInsert(String sql,Object...args){
+        //获取连接
+        Connection connection=null;
+        PreparedStatement pre=null;
+        try {
+            connection = getConnection();
+            connection.setAutoCommit(false);
+            pre = connection.prepareStatement(sql);
+            long start = System.currentTimeMillis();
+            for (int i=0;i<1000000;i++){
+                pre.setObject(1,"name"+i);
+                pre.addBatch();
+                if(i%10000==0){
+                    pre.executeBatch();
+                    pre.clearBatch();
+                }
+
+            }
+            connection.commit();
+            long end = System.currentTimeMillis();
+            System.out.println(end - start);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            closeResource(connection,pre);
+        }
+    }
 }
